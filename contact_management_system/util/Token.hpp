@@ -21,6 +21,10 @@ public:
     virtual ~Token();
 
     string getToken();
+
+    TokenEnum getTipo() const;
+
+    string getLexema() const;
 };
 
 

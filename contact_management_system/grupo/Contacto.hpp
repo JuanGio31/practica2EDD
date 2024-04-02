@@ -6,6 +6,7 @@
 #define CONTACT_CONTACTO_HPP
 
 #include "iostream"
+#include "../estructuras/LD_Generica.hpp"
 
 using namespace std;
 
@@ -17,31 +18,64 @@ private:
     int celular;
     string direccion;
     string cumpleanios;
+    char categoria;
 
 public:
-    [[nodiscard]] const string &getNombre() const;
+    Contacto() {
+        nombre = " ";
+        apellido = " ";
+        apodo = " ";
+        celular = 0;
+        direccion = " ";
+        cumpleanios = " ";
+        categoria = ' ';
+    }
 
-    void setNombre(const string &str);
+    Contacto(const string &nombre, const string &apellido, int celular);
 
-    [[nodiscard]] const string &getApellido() const;
+    Contacto(const string &nombre, const string &apodo, int celular, const string &cumpleanios);
 
-    void setApellido(const string &str);
+    Contacto(const string &nombre, int celular, const string &direccion, char categoria);
 
-    [[nodiscard]] const string &getApodo() const;
+    const string &getNombre() const;
 
-    void setApodo(const string &str);
+    void setNombre(const string &nombre);
 
-    [[nodiscard]] int getCelular() const;
+    const string &getApellido() const;
 
-    void setCelular(int numero);
+    void setApellido(const string &apellido);
 
-    [[nodiscard]] const string &getDireccion() const;
+    const string &getApodo() const;
 
-    void setDireccion(const string &str);
+    void setApodo(const string &apodo);
 
-    [[nodiscard]] const string &getCumpleanios() const;
+    int getCelular() const;
 
-    void setCumpleanios(const string &fecha);
+    void setCelular(int celular);
+
+    const string &getDireccion() const;
+
+    void setDireccion(const string &direccion);
+
+    const string &getCumpleanios() const;
+
+    void setCumpleanios(const string &cumpleanios);
+
+    char getCategoria() const;
+
+    void setCategoria(char categoria);
+
+    string presentar();
+
+    string indicador() {
+        if (nombre != " ") {
+            return nombre;
+        } else if (apellido != " ") {
+            return apellido;
+        } else {
+            return apodo;
+        }
+    }
 };
 
 

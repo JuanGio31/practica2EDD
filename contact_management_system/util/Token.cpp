@@ -18,3 +18,11 @@ Token::~Token() {
 string Token::getToken() {
     return "lexema [ " + lexema + " ]";
 }
+
+TokenEnum Token::getTipo() const {
+    return tipo;
+}
+
+string Token::getLexema() const {
+    return lexema;
+}

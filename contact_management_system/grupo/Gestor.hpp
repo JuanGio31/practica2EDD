@@ -7,16 +7,20 @@
 
 #include "iostream"
 #include "Contacto.hpp"
+#include "Grupo.hpp"
 
 using namespace std;
 
 class Gestor {
 private:
     string nombre;
-    //Lista<Contacto>
+    Grupo grupo;
 
 public:
-    void agregarContacto(string nombreGrupo, Contacto contacto);
+    void agregarContacto(const string &nombreGrupo, const Contacto &contacto) {
+        grupo.setNombre(nombreGrupo);
+        grupo.agregar(contacto);
+    }
 
     Contacto buscarContacto(string nombreGrupo, string clave);
 

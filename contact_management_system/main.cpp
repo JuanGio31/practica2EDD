@@ -5,6 +5,7 @@
 #include "util/Token.hpp"
 #include "util/Archivo.hpp"
 #include "estructuras/Arbol.hpp"
+#include "grupo/Grupo.hpp"
 
 using namespace std;
 
@@ -38,28 +39,16 @@ int main() {
 //    print(escaner.getSymbol());
 //    cout << endl << endl;
 //    printf(escaner.getToken());
+    getMenu();
 
-//    Archivo archivo;
-//    string nombre = "hola";
-//    archivo.crearDirectorio(nombre);
-//    archivo.crearArchivo(nombre, "juan", "holamundqweqweoasdasdasd");
-//    archivo.escribirAccion("prueba 6", "log");
-//    getMenu();
-
-    Arbol arbol;
-    int contador = 0;
-    arbol.insertarNodo(arbol.raiz, "8");
-    arbol.insertarNodo(arbol.raiz, "3");
-    arbol.insertarNodo(arbol.raiz, "10");
-    arbol.insertarNodo(arbol.raiz, "1");
-    arbol.insertarNodo(arbol.raiz, "6");
-    arbol.insertarNodo(arbol.raiz, "14");
-    arbol.insertarNodo(arbol.raiz, "13");
-    arbol.insertarNodo(arbol.raiz, "4");
-    arbol.insertarNodo(arbol.raiz, "7");
+//    Grupo *asd = new Grupo("nuevo");
+//    asd->agregar(Contacto("juan", "prez", 124123));
+//    asd->agregar(Contacto("jua", "preza", 1236123));
+//    asd->agregar(Contacto("juanas", "przez", 1283123));
+//    asd->agregar(Contacto("juaw", "prezw", 12311923));
+//    asd->agregar(Contacto("juart", "pwrez", 123132123));
 
 
-    arbol.mostrarArbol(arbol.raiz, contador);
     return 0;
 }
 
@@ -102,6 +91,8 @@ void getMenu() {
 }
 
 void getMenuComando() {
+    Scan scan;
+    Archivo archivo;
     string contenido = "********* COMANDOS *********\n"
                        "1. CREACION DE GRUPOS.\n"
                        "2. INSERCION DE GRUPOS.\n"
@@ -109,25 +100,41 @@ void getMenuComando() {
                        "4. REGRESAR.\n"
                        "****************************\n"
                        "\nSELECCIONE UNA OPCION > ";
+
     int opcionMenuComando = 0;
+    string com;
     do {
         cout << contenido;
         cin >> opcionMenuComando;
         switch (opcionMenuComando) {
             case 1:
                 cout << "\nCREACION DE GRUPOS" << endl;
+                cout << "comando > ";
+                cin.ignore();
+                getline(cin, com);
+                archivo.escribirAccion("CREACION DE GRUPOS\n" + com, "log");
                 break;
             case 2:
                 cout << "\nINSERCION DE GRUPOS" << endl;
+                cout << "comando > ";
+                cin.ignore();
+                getline(cin, com);
+                archivo.escribirAccion("INSERTAR CONTACTO", "log");
                 break;
             case 3:
                 cout << "\nBUSQUEDA DE GRUPOS" << endl;
+                cout << "comando > ";
+                cin.ignore();
+                getline(cin, com);
+                archivo.escribirAccion("BUSQUEDA DE CONTACTO", "log");
                 break;
             case 4:
                 cout << "\n<-" << endl;
+                com = "";
                 break;
             default:
                 cout << "\nOPCION NO VALIDA!, INTENTE DENUEVO." << endl << endl;
+                com = "";
                 break;
         }
     } while (opcionMenuComando != 4);
