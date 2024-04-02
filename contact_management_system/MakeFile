@@ -4,6 +4,9 @@ STRUCT_FILE = $(STRUCT)*.hpp
 UTIL = util/
 UTIL_FILE_HPP = $(UTIL)*.hpp
 UTIL_FILE_CPP = $(UTIL)*.cpp
+GRUPO = grupo/
+GRUPO_FILE_CPP = $(GRUPO)*.hpp
+GRUPO_FILE_HPP = $(GRUPO)*.cpp
 MAIN = main.cpp
 OUT = bin/
 OUT_FILE = $(OUT)APP
@@ -11,7 +14,7 @@ OUT_FILE = $(OUT)APP
 #REGLAS EXPLICITAS
 
 default:
-	g++ -std=c++17 $(MAIN) $(STRUCT_FILE) $(UTIL_FILE_HPP) $(UTIL_FILE_CPP) -o $(OUT_FILE)
+	g++ -std=c++17 $(MAIN) $(STRUCT_FILE) $(UTIL_FILE_HPP) $(UTIL_FILE_CPP) $(GRUPO_FILE_CPP) $(GRUPO_FILE_HPP) -o $(OUT_FILE)
 
 app:
 	$(OUTFILE)
