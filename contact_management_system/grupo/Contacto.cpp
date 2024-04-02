@@ -8,46 +8,46 @@ const string &Contacto::getNombre() const {
     return nombre;
 }
 
-void Contacto::setNombre(const string &nombre) {
-    Contacto::nombre = nombre;
+void Contacto::setNombre(const string &str) {
+    Contacto::nombre = str;
 }
 
 const string &Contacto::getApellido() const {
     return apellido;
 }
 
-void Contacto::setApellido(const string &apellido) {
-    Contacto::apellido = apellido;
+void Contacto::setApellido(const string &str) {
+    Contacto::apellido = str;
 }
 
 const string &Contacto::getApodo() const {
     return apodo;
 }
 
-void Contacto::setApodo(const string &apodo) {
-    Contacto::apodo = apodo;
+void Contacto::setApodo(const string &str) {
+    Contacto::apodo = str;
 }
 
 int Contacto::getCelular() const {
     return celular;
 }
 
-void Contacto::setCelular(int celular) {
-    Contacto::celular = celular;
+void Contacto::setCelular(int numero) {
+    Contacto::celular = numero;
 }
 
 const string &Contacto::getDireccion() const {
     return direccion;
 }
 
-void Contacto::setDireccion(const string &direccion) {
-    Contacto::direccion = direccion;
+void Contacto::setDireccion(const string &str) {
+    Contacto::direccion = str;
 }
 
 const string &Contacto::getCumpleanios() const {
     return cumpleanios;
 }
 
-void Contacto::setCumpleanios(const string &cumpleanios) {
-    Contacto::cumpleanios = cumpleanios;
+void Contacto::setCumpleanios(const string &fecha) {
+    Contacto::cumpleanios = fecha;
 }

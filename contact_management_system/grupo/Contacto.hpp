@@ -19,29 +19,29 @@ private:
     string cumpleanios;
 
 public:
-    const string &getNombre() const;
+    [[nodiscard]] const string &getNombre() const;
 
-    void setNombre(const string &nombre);
+    void setNombre(const string &str);
 
-    const string &getApellido() const;
+    [[nodiscard]] const string &getApellido() const;
 
-    void setApellido(const string &apellido);
+    void setApellido(const string &str);
 
-    const string &getApodo() const;
+    [[nodiscard]] const string &getApodo() const;
 
-    void setApodo(const string &apodo);
+    void setApodo(const string &str);
 
-    int getCelular() const;
+    [[nodiscard]] int getCelular() const;
 
-    void setCelular(int celular);
+    void setCelular(int numero);
 
-    const string &getDireccion() const;
+    [[nodiscard]] const string &getDireccion() const;
 
-    void setDireccion(const string &direccion);
+    void setDireccion(const string &str);
 
-    const string &getCumpleanios() const;
+    [[nodiscard]] const string &getCumpleanios() const;
 
-    void setCumpleanios(const string &cumpleanios);
+    void setCumpleanios(const string &fecha);
 };
 
 

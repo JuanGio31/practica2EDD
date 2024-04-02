@@ -7,6 +7,7 @@
 
 #include "iostream"
 #include "Contacto.hpp"
+
 using namespace std;
 
 class Gestor {
@@ -15,9 +16,11 @@ private:
     //Lista<Contacto>
 
 public:
-    void agregarContacto(Contacto contacto);
+    void agregarContacto(string nombreGrupo, Contacto contacto);
+
     Contacto buscarContacto(string nombreGrupo, string clave);
 
+    void agregarContacto(Contacto contacto);
 };
 
 
