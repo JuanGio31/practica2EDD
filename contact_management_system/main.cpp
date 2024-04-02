@@ -1,9 +1,10 @@
 #include <bits/stdc++.h>
 
 #include <string>
-#include "lectura/Scan.hpp"
-#include "lectura/Token.hpp"
-#include "Archivo.hpp"
+#include "util/Scan.hpp"
+#include "util/Token.hpp"
+#include "util/Archivo.hpp"
+#include "estructuras/Arbol.hpp"
 
 using namespace std;
 
@@ -25,8 +26,6 @@ void printf(std::vector<Token> const &input) {
 
 int main() {
     cout << endl;
-
-
     //Scan escaner;
 
     //escaner.analizar("ADD CONTACT IN amigos FIELDS (Pedro, Alvarez, 12345678, 02-05-1998)");
@@ -39,13 +38,28 @@ int main() {
 //    print(escaner.getSymbol());
 //    cout << endl << endl;
 //    printf(escaner.getToken());
-//
+
 //    Archivo archivo;
 //    string nombre = "hola";
-//    Archivo::crearDirectorio(nombre);
-//    Archivo::crearArchivo(nombre, "juan", "holamundqweqweoasdasdasd");
+//    archivo.crearDirectorio(nombre);
+//    archivo.crearArchivo(nombre, "juan", "holamundqweqweoasdasdasd");
+//    archivo.escribirAccion("prueba 6", "log");
+//    getMenu();
 
-    getMenu();
+    Arbol arbol;
+    int contador = 0;
+    arbol.insertarNodo(arbol.raiz, "8");
+    arbol.insertarNodo(arbol.raiz, "3");
+    arbol.insertarNodo(arbol.raiz, "10");
+    arbol.insertarNodo(arbol.raiz, "1");
+    arbol.insertarNodo(arbol.raiz, "6");
+    arbol.insertarNodo(arbol.raiz, "14");
+    arbol.insertarNodo(arbol.raiz, "13");
+    arbol.insertarNodo(arbol.raiz, "4");
+    arbol.insertarNodo(arbol.raiz, "7");
+
+
+    arbol.mostrarArbol(arbol.raiz, contador);
     return 0;
 }
 

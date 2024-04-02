@@ -14,7 +14,10 @@ default:
 	g++ -std=c++17 $(MAIN) $(STRUCT_FILE) $(UTIL_FILE_HPP) $(UTIL_FILE_CPP) -o $(OUT_FILE)
 
 app:
-	$(OUT_FILE)
+	$(OUTFILE)
 
 run:
 	default app
+
+clean:
+	rm -f *.o $(OUT_FILE)
