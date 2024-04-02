@@ -1,0 +1,20 @@
+#MACROS
+STRUCT = estructuras/
+STRUCT_FILE = $(STRUCT)*.hpp
+UTIL = util/
+UTIL_FILE_HPP = $(UTIL)*.hpp
+UTIL_FILE_CPP = $(UTIL)*.cpp
+MAIN = main.cpp
+OUT = bin/
+OUT_FILE = $(OUT)APP
+
+#REGLAS EXPLICITAS
+
+default:
+	g++ -std=c++17 $(MAIN) $(STRUCT_FILE) $(UTIL_FILE_HPP) $(UTIL_FILE_CPP) -o $(OUT_FILE)
+
+app:
+	$(OUT_FILE)
+
+run:
+	default app
