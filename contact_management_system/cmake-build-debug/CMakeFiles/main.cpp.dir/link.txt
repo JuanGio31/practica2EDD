@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/main.cpp.dir/util/Scan.cpp.o CMakeFiles/main.cpp.dir/main.cpp.o CMakeFiles/main.cpp.dir/util/Token.cpp.o CMakeFiles/main.cpp.dir/grupo/Contacto.cpp.o -o main.cpp 
