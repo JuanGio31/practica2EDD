@@ -1,4 +1,4 @@
-# Install script for directory: /home/giovanic/practicagit/practica2EDD/contact_management_system
+# Install script for directory: /home/giovanic/Documentos/Tareas/1S 2024/EDD/practica2EDD/contact_management_system
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/giovanic/practicagit/practica2EDD/contact_management_system/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/giovanic/Documentos/Tareas/1S 2024/EDD/practica2EDD/contact_management_system/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -17,7 +17,8 @@ add_executable(main.cpp
         util/Parser.hpp
         grupo/Contacto.cpp
         estructuras/LD_Generica.hpp
-        estructuras/HashMap.hpp
         grupo/Gestor.hpp
         grupo/Grupo.hpp
+        estructuras/Tabla.hpp
+        estructuras/Arbol_generic.hpp
 )

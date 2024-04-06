@@ -10,26 +10,32 @@
 #include "../estructuras/LD_Generica.hpp"
 #include "Contacto.hpp"
 #include "../estructuras/Arbol.hpp"
+#include "../estructuras/Tabla.hpp"
 
 class Grupo {
 private:
     string nombre;
-    Arbol *gestion = new Arbol();
+    Tabla<string, Contacto> *contactos = new Tabla<string, Contacto>(30);
 public:
-    Grupo(const string &n) {
+     Grupo(const string &n) {
         nombre = n;
     }
 
+    Grupo() = default;
+
     void agregar(const Contacto &contacto) {
         if (contacto.getNombre() != " ") {
-            gestion->insertarNodo(gestion->raiz, contacto, gestion->raiz->dato.getNombre());
+            contactos->insertar(contacto.getNombre(), contacto);
         } else if (contacto.getApellido() != " ") {
-            gestion->insertarNodo(gestion->raiz, contacto, gestion->raiz->dato.getApellido());
+            contactos->insertar(contacto.getApellido(), contacto);
         } else if (contacto.getApodo() != " ") {
-            gestion->insertarNodo(gestion->raiz, contacto, gestion->raiz->dato.getApodo());
+            contactos->insertar(contacto.getApodo(), contacto);
         }
     }
 
+//    string getContacto(string key) {
+//        return contactos->get(key).getApellido();
+//    }
 
     [[nodiscard]] const string &getNombre() const {
         return nombre;

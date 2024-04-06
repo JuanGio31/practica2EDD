@@ -4,14 +4,14 @@
 #include "util/Scan.hpp"
 #include "util/Token.hpp"
 #include "util/Archivo.hpp"
-#include "estructuras/Arbol.hpp"
-#include "grupo/Grupo.hpp"
+#include "estructuras/Tabla.hpp"
+#include "util/Parser.hpp"
 
 using namespace std;
 
-void getMenu(void);
+void getMenu();
 
-void getMenuComando(void);
+void getMenuComando();
 
 void print(std::vector<string> const &input) {
     for (const auto &i: input) {
@@ -29,26 +29,17 @@ int main() {
     cout << endl;
     //Scan escaner;
 
-    //escaner.analizar("ADD CONTACT IN amigos FIELDS (Pedro, Alvarez, 12345678, 02-05-1998)");
-    //escaner.analizar("ADD NEW-GROUP clientes FIELDS (nombre STRING, apellido STRING, celular INTEGER) ORDER apellido;");
-    //escaner.analizar("ADD NEW-GROUP friends FIELDS (nombre STRING, apodo STRING, celular INTEGER, cumpleanios DATE) ORDER cumpleanios;");
-    //escaner.analizar("FIND CONTACT IN clientes CONTACT-FIELD apellido=alvarez;");
-
+//    escaner.analizar("ADD CONTACT IN amigos FIELDS (Pedro, Alvarez, 12345678, 02-05-1998)");
+//    escaner.analizar("ADD NEW-GROUP clientes FIELDS (nombre STRING, apellido STRING, celular INTEGER) ORDER apellido;");
+//    escaner.analizar("ADD NEW-GROUP friends FIELDS (nombre STRING, apodo STRING, celular INTEGER, cumpleanios DATE) ORDER cumpleanios;");
+//    escaner.analizar("FIND CONTACT IN clientes CONTACT-FIELD apellido=alvarez;");
+//
 //    escaner.analizar(
 //            "ADD NEW-GROUP proveedores FIELDS (empresa STRING, direccion STRING, tel1 INTEGER, categoria CHAR) ORDER tel1;");
 //    print(escaner.getSymbol());
 //    cout << endl << endl;
 //    printf(escaner.getToken());
     getMenu();
-
-//    Grupo *asd = new Grupo("nuevo");
-//    asd->agregar(Contacto("juan", "prez", 124123));
-//    asd->agregar(Contacto("jua", "preza", 1236123));
-//    asd->agregar(Contacto("juanas", "przez", 1283123));
-//    asd->agregar(Contacto("juaw", "prezw", 12311923));
-//    asd->agregar(Contacto("juart", "pwrez", 123132123));
-
-
     return 0;
 }
 
@@ -91,7 +82,8 @@ void getMenu() {
 }
 
 void getMenuComando() {
-    Scan scan;
+    Scan escaner;
+    Parser leer = Parser(&escaner);
     Archivo archivo;
     string contenido = "********* COMANDOS *********\n"
                        "1. CREACION DE GRUPOS.\n"
@@ -112,6 +104,9 @@ void getMenuComando() {
                 cout << "comando > ";
                 cin.ignore();
                 getline(cin, com);
+                escaner.analizar(com);
+                printf(escaner.getToken());
+                leer.comprobar();
                 archivo.escribirAccion("CREACION DE GRUPOS\n" + com, "log");
                 break;
             case 2:

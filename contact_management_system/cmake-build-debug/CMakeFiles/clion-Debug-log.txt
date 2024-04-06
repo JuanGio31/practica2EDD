@@ -1,4 +1,13 @@
-/home/giovanic/Descargas/novelas/clion-2023.3.3/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/giovanic/Descargas/novelas/clion-2023.3.3/bin/ninja/linux/x64/ninja -G Ninja -S /home/giovanic/practicagit/practica2EDD/contact_management_system -B /home/giovanic/practicagit/practica2EDD/contact_management_system/cmake-build-debug
+/home/giovanic/Descargas/novelas/clion-2023.3.3/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S "/home/giovanic/Documentos/Tareas/1S 2024/EDD/practica2EDD/contact_management_system" -B "/home/giovanic/Documentos/Tareas/1S 2024/EDD/practica2EDD/contact_management_system/cmake-build-debug"
+CMake Deprecation Warning:
+  Support for "Extra Generators" like
+
+    CodeBlocks
+
+  is deprecated and will be removed from a future version of CMake.  IDEs may
+  use the cmake-file-api(7) to view CMake-generated project build trees.
+
+
 -- Configuring done (0.0s)
 -- Generating done (0.0s)
--- Build files have been written to: /home/giovanic/practicagit/practica2EDD/contact_management_system/cmake-build-debug
+-- Build files have been written to: /home/giovanic/Documentos/Tareas/1S 2024/EDD/practica2EDD/contact_management_system/cmake-build-debug

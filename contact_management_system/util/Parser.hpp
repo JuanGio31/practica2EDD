@@ -7,37 +7,32 @@
 
 #include "Scan.hpp"
 #include "../grupo/Contacto.hpp"
+#include "../estructuras/Tabla.hpp"
+#include "../grupo/Grupo.hpp"
 
 class Parser {
 private:
     string comando;
-    Scan lexer;
+    Scan *lexer;
+    Tabla<string, Grupo> *grupos = new Tabla<string, Grupo>(10);
 
 public:
-    explicit Parser(const Scan &lexer) : lexer(lexer) {}
+    explicit Parser(Scan *lexer) : lexer(lexer) {}
 
     virtual ~Parser() = default;
 
     void comprobar() {
-        Contacto *contacto = new Contacto();
-        int opcion = -1;    // 1->crear, 2->insertar, 3->buscar
-        for (int i = 0; lexer.getToken().size(); i++) {
-            if (opcion == -1) {
-                switch (lexer.getToken()[i].getTipo()) {
-                    case TokenEnum::ADD:
-                        if (lexer.getToken()[i + 1].getTipo() == TokenEnum::N_G)
-                            opcion = 1;
-                        else
-                            opcion=2;
-                        break;
-                    case TokenEnum::FIND:
-                        opcion = 3;
-                        break;
-                }
-            } else {
-
+        if (lexer->getToken()[0].getTipo() == TokenEnum::ADD && lexer->getToken()[1].getTipo() == TokenEnum::N_G) {
+            Grupo *gp = new Grupo();
+            if (lexer->getToken()[2].getTipo() == TokenEnum::ID) {
+                gp->setNombre(lexer->getToken()[2].getLexema());
             }
+            grupos->insertar(gp->getNombre(), *gp);
         }
+    }
+
+    void getGrupoN(string key) {
+       // cout << grupos->get(key).getNombre() << endl;
     }
 
 };

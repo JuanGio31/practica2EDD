@@ -1,3 +1,3 @@
-/home/giovanic/practicagit/practica2EDD/contact_management_system/cmake-build-debug/CMakeFiles/main.cpp.dir
-/home/giovanic/practicagit/practica2EDD/contact_management_system/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/giovanic/practicagit/practica2EDD/contact_management_system/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/giovanic/Documentos/Tareas/1S 2024/EDD/practica2EDD/contact_management_system/cmake-build-debug/CMakeFiles/main.cpp.dir
+/home/giovanic/Documentos/Tareas/1S 2024/EDD/practica2EDD/contact_management_system/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/giovanic/Documentos/Tareas/1S 2024/EDD/practica2EDD/contact_management_system/cmake-build-debug/CMakeFiles/rebuild_cache.dir
